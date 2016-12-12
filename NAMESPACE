@@ -1,0 +1,10 @@
+export(
+explainVis,wrap4Explanation
+)
+
+import(CORElearn)
+import(semiArtificial)
+
+importFrom("grDevices", "dev.off")
+importFrom("stats", "aggregate", "model.frame", "na.pass", "predict","qnorm", "reformulate")
+importFrom("graphics", "plot.new","axis", "par", "plot", "rect", "segments", "text", "title")    
