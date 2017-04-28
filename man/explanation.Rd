@@ -22,7 +22,7 @@ explainVis(model, trainData, testData, visLevel=c("both","model","instance"),
 		displayThreshold=0.0, normalizeTo=0,
         displayColor=c("color","grey"), noDecimalsInValueName=2,
         modelTitle="Model explanation for", instanceTitle="Explaining prediction for",
-        recall=NULL) 
+        showNumbers = FALSE, recall=NULL) 
 }
 \arguments{
   \item{model}{ The model as returned by \code{\link{CoreModel}} function. }
@@ -114,6 +114,8 @@ explainVis(model, trainData, testData, visLevel=c("both","model","instance"),
   \item{instanceTitle}{The value of parameter becomes the first part of the title in instance explanation graph. 
                The information contained in \code{problemName}, class name and selected \code{classValue}
                are concatenated to the end of provided character string. If \code{instanceTitle=NULL} the title is not shown.}   
+ \item{showNumbers}{The logical value with default value \code{FALSE}. If \code{showNumbers=TRUE} the explanation values on shown on the graph 
+                inside each explanation box (or beside it if there is not enough space within the box).}   
   \item{recall}{If parameter is different from NULL, it shall contain the list invisibly returned by one of previous calls to function \code{explainVis}. In this case the function reuses already computed explanations,
   average explanations, discretization, etc.,  and only display data differently according to other supplied parameters. 
   In this case values of parameters \code{model}, \code{testData} and \code{classValue}should be identical to the original call.
@@ -195,6 +197,7 @@ Some references are available from \url{http://lkm.fri.uni-lj.si/rmarko/papers/}
 }
 
 \examples{
+require(CORElearn) # contains several prediction models
 # use iris data set, split it randomly into a training and testing set
 trainIdxs <- sample(x=nrow(iris), size=0.7*nrow(iris), replace=FALSE)
 testIdxs <- c(1:nrow(iris))[-trainIdxs]

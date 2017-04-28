@@ -1,3 +1,6 @@
+ExplainPrediction-1.1.8, 2017-04-03: update for changed exports in packages CORElearn and semiArtificial 
+ExplainPrediction-1.1.7, 2017-03-16: fixed bug in randomForest wrapper 
+ExplainPrediction-1.1.6, 2017-03-10: added showNumbers parameter for display 
 ExplainPrediction-1.1.5, 2016-12-11: bux fixes, nnet for binary class 
 ExplainPrediction-1.1.4, 2016-11-06: bux fixes, minor improvements 
 ExplainPrediction-1.1.3, 2016-05-05: bux fixes, new wrapper for randomForest model (provided by Kaja Zupanc) 
